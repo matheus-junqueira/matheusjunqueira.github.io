@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matheus Junqueira</title>
+<meta name="description" content="Matheus Junqueira — Predoctoral Fellow at Johns Hopkins SAIS. Research in macroeconomics, international trade, and political economy." />
+
+<!-- Open Graph (link previews) -->
+<meta property="og:title" content="Matheus Junqueira" />
+<meta property="og:description" content="Predoctoral Fellow at Johns Hopkins SAIS — Macroeconomics, International Trade, Political Economy." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy:      #0A2540;
+    --navy-soft: #1B3556;
+    --gold:      #C8A04D;
+    --ink:       #222831;
+    --muted:     #5A6573;
+    --paper:     #FBF8F2;
+    --rule:      #E8E2D3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    /* very subtle paper texture */
+    background-image:
+      radial-gradient(at 20% 10%, rgba(200,160,77,0.05) 0, transparent 40%),
+      radial-gradient(at 80% 90%, rgba(10,37,64,0.04) 0, transparent 40%);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 80px 32px 96px;
+  }
+
+  /* ----- Header ----- */
+  header { margin-bottom: 56px; }
+
+  .eyebrow {
+    font-family: 'Newsreader', serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1.05;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    font-variation-settings: 'opsz' 144, 'SOFT' 50;
+    margin-bottom: 14px;
+  }
+
+  .role {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--navy-soft);
+    margin-bottom: 4px;
+  }
+
+  .affiliation {
+    font-family: 'Newsreader', serif;
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  /* ----- Bio ----- */
+  .bio {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 48px;
+  }
+  .bio p + p { margin-top: 16px; }
+  .bio em { color: var(--navy); font-style: italic; }
+
+  /* ----- Section blocks ----- */
+  section { margin-bottom: 48px; }
+
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  h2::before {
+    content: '§';
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+
+  /* Research interests */
+  .interests {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 17px;
+  }
+  .interests li {
+    color: var(--navy);
+    font-style: italic;
+  }
+  .interests li:not(:last-child)::after {
+    content: '·';
+    color: var(--gold);
+    margin-left: 14px;
+    font-style: normal;
+  }
+
+  /* Affiliations list */
+  .timeline {
+    list-style: none;
+    display: grid;
+    gap: 18px;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .timeline .when {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-feature-settings: 'tnum';
+  }
+  .timeline .what strong {
+    font-weight: 500;
+    color: var(--navy);
+  }
+  .timeline .what span {
+    display: block;
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 2px;
+  }
+
+  /* ----- CV download ----- */
+  .cv-box {
+    background: linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cv-box .label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--navy);
+  }
+  .cv-box .label small {
+    display: block;
+    font-style: normal;
+    font-family: 'Newsreader', serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--navy);
+    color: #fff;
+    padding: 12px 22px;
+    text-decoration: none;
+    font-family: 'Newsreader', serif;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--navy);
+    transition: all 0.25s ease;
+  }
+  .btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    transform: translateY(-1px);
+  }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* ----- Contact ----- */
+  .contact {
+    display: grid;
+    gap: 8px;
+    font-size: 17px;
+  }
+  .contact a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease;
+  }
+  .contact a:hover { border-color: var(--gold); }
+  .contact .channel {
+    display: inline-block;
+    width: 90px;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ----- Footer ----- */
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer .glyph { color: var(--gold); }
+
+  /* ----- Mobile ----- */
+  @media (max-width: 600px) {
+    .wrap { padding: 56px 24px 72px; }
+    body { font-size: 17px; }
+    .timeline li { grid-template-columns: 1fr; gap: 4px; }
+    .cv-box { padding: 22px; }
+    .contact .channel { display: block; width: auto; margin-bottom: 2px; }
+  }
+
+  /* ----- Subtle entrance animation ----- */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  header, section, .cv-box, footer {
+    animation: rise 0.7s ease-out backwards;
+  }
+  header     { animation-delay: 0.05s; }
+  .cv-box    { animation-delay: 0.20s; }
+  section:nth-of-type(1) { animation-delay: 0.25s; }
+  section:nth-of-type(2) { animation-delay: 0.32s; }
+  section:nth-of-type(3) { animation-delay: 0.40s; }
+  footer     { animation-delay: 0.50s; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Personal Page</div>
+    <h1>Matheus Junqueira</h1>
+    <div class="role">Predoctoral Fellow</div>
+    <div class="affiliation">Global Research Training Initiative — Johns Hopkins SAIS</div>
+  </header>
+
+  <div class="bio">
+    <p>
+      I am a <em>Predoctoral Fellow</em> at the Global Research Training Initiative
+      (GRTI-UPPER) at Johns Hopkins SAIS, working with Professors Filipe Campante
+      and Shoumitro Chatterjee on projects in political economy, international
+      trade, and development.
+    </p>
+    <p>
+      Before joining GRTI, I earned an M.A. in Business Economics from FGV-EESP
+      and a B.A. in Economics from FEA-USP. My research uses microdata and
+      quasi-experimental methods to study how political institutions shape
+      economic outcomes.
+    </p>
+  </div>
+
+  <div class="cv-box">
+    <div class="label">
+      Curriculum Vitae
+      <small>Updated 2026 · PDF</small>
+    </div>
+    <a class="btn" href="cv.pdf" download>
+      Download
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    </a>
+  </div>
+
+  <section>
+    <h2>Research Interests</h2>
+    <ul class="interests">
+      <li>Macroeconomics</li>
+      <li>International Trade</li>
+      <li>Political Economy</li>
+      <li>Development</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Affiliations</h2>
+    <ul class="timeline">
+      <li>
+        <span class="when">2025 —</span>
+        <span class="what">
+          <strong>Predoctoral Fellow</strong>
+          <span>Johns Hopkins SAIS · GRTI-UPPER</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">M.A.</span>
+        <span class="what">
+          <strong>Business Economics</strong>
+          <span>FGV-EESP, São Paulo</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">B.A.</span>
+        <span class="what">
+          <strong>Economics</strong>
+          <span>FEA-USP, São Paulo</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <div><span class="channel">Email</span> <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></div>
+      <div><span class="channel">LinkedIn</span> <a href="https://www.linkedin.com/in/matheus-junqueira-b98965298" target="_blank" rel="noopener">linkedin.com/in/matheus-junqueira</a></div>
+      <div><span class="channel">Location</span> <span>São Paulo · Baltimore</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Matheus Junqueira</span>
+    <span><span class="glyph">§</span> Built with care</span>
+  </footer>
+
+</div>
+</body>
+</html>
