@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matheus Junqueira</title>
+<meta name="description" content="Matheus Junqueira — Predoctoral Fellow at Johns Hopkins SAIS. Research in political economy, international trade, and applied econometrics." />
+
+<!-- Open Graph (link previews on WhatsApp, LinkedIn, etc.) -->
+<meta property="og:title" content="Matheus Junqueira" />
+<meta property="og:description" content="Predoctoral Fellow at Johns Hopkins SAIS — political economy, international trade, applied econometrics." />
+<meta property="og:image" content="photo.jpg" />
+<meta property="og:type" content="website" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy:      #0A2540;
+    --navy-soft: #1B3556;
+    --gold:      #C8A04D;
+    --gold-soft: #E8D9B5;
+    --ink:       #222831;
+    --muted:     #5A6573;
+    --paper:     #FBF8F2;
+    --rule:      #E8E2D3;
+    --card:      #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    background-image:
+      radial-gradient(at 20% 10%, rgba(200,160,77,0.05) 0, transparent 40%),
+      radial-gradient(at 80% 90%, rgba(10,37,64,0.04) 0, transparent 40%);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 32px 96px;
+  }
+
+  /* ========== Header with photo ========== */
+  header { margin-bottom: 56px; }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px var(--rule),
+      0 18px 40px -20px rgba(10,37,64,0.35);
+  }
+  .photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.95);
+  }
+  /* Decorative gold corner accent */
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    top: -6px; left: -6px;
+    width: 24px; height: 24px;
+    border-top: 1.5px solid var(--gold);
+    border-left: 1.5px solid var(--gold);
+    z-index: 2;
+  }
+
+  .eyebrow {
+    font-family: 'Newsreader', serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5.6vw, 58px);
+    line-height: 1.05;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    font-variation-settings: 'opsz' 144, 'SOFT' 50;
+    margin-bottom: 14px;
+  }
+
+  .role {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--navy-soft);
+    margin-bottom: 4px;
+  }
+  .affiliation {
+    font-family: 'Newsreader', serif;
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  /* ========== Bio ========== */
+  .bio {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 56px;
+  }
+  .bio p + p { margin-top: 16px; }
+  .bio em { color: var(--navy); font-style: italic; }
+  .bio a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-soft);
+    transition: border-color 0.2s ease;
+  }
+  .bio a:hover { border-bottom-color: var(--gold); }
+
+  /* ========== Featured paper card ========== */
+  .paper-feature {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    padding: 32px 34px;
+    margin-bottom: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .paper-feature::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+  }
+  .paper-tag {
+    font-family: 'Newsreader', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .paper-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.15;
+    color: var(--navy);
+    letter-spacing: -0.005em;
+    margin-bottom: 6px;
+  }
+  .paper-subtitle {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--navy-soft);
+    margin-bottom: 18px;
+    line-height: 1.4;
+  }
+  .paper-abstract {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+
+  /* ========== CV box ========== */
+  .cv-box {
+    background: linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--navy);
+    padding: 24px 30px;
+    margin-bottom: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cv-box .label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--navy);
+  }
+  .cv-box .label small {
+    display: block;
+    font-style: normal;
+    font-family: 'Newsreader', serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--navy);
+    color: #fff;
+    padding: 12px 22px;
+    text-decoration: none;
+    font-family: 'Newsreader', serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--navy);
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    transform: translateY(-1px);
+  }
+  .btn svg { width: 15px; height: 15px; }
+
+  /* ========== Section blocks ========== */
+  section { margin-bottom: 48px; }
+  section:last-of-type { margin-bottom: 0; }
+
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  h2::before {
+    content: '§';
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+
+  /* Research interests */
+  .interests {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 17px;
+  }
+  .interests li {
+    color: var(--navy);
+    font-style: italic;
+  }
+  .interests li:not(:last-child)::after {
+    content: '·';
+    color: var(--gold);
+    margin-left: 14px;
+    font-style: normal;
+  }
+
+  /* Education / affiliations timeline */
+  .timeline {
+    list-style: none;
+    display: grid;
+    gap: 22px;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .timeline .when {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-feature-settings: 'tnum';
+    padding-top: 4px;
+  }
+  .timeline .what strong {
+    font-weight: 500;
+    color: var(--navy);
+    font-size: 18px;
+  }
+  .timeline .what .where {
+    display: block;
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 2px;
+  }
+  .timeline .what .detail {
+    display: block;
+    color: var(--navy-soft);
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 6px;
+    line-height: 1.45;
+  }
+
+  /* Honors list */
+  .honors {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .honors li {
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+    color: var(--ink);
+  }
+  .honors li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--gold);
+    font-size: 9px;
+  }
+  .honors .year {
+    color: var(--muted);
+    font-size: 14px;
+    font-feature-settings: 'tnum';
+  }
+
+  /* Skills */
+  .skills {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 18px 18px;
+    font-size: 16px;
+  }
+  .skills dt {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding-top: 3px;
+  }
+  .skills dd { color: var(--ink); }
+  .skills dd em {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* Contact */
+  .contact {
+    display: grid;
+    gap: 10px;
+    font-size: 17px;
+  }
+  .contact a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease;
+  }
+  .contact a:hover { border-color: var(--gold); }
+  .contact .channel {
+    display: inline-block;
+    width: 90px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer .glyph { color: var(--gold); }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .wrap { padding: 48px 22px 64px; }
+    body { font-size: 17px; }
+
+    .header-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .photo-frame {
+      width: 120px;
+      height: 120px;
+      order: -1;
+    }
+    h1 { font-size: 38px; }
+
+    .bio { font-size: 17px; }
+
+    .paper-feature { padding: 26px 24px; }
+    .paper-title { font-size: 22px; }
+
+    .cv-box { padding: 22px; flex-direction: column; align-items: stretch; }
+    .cv-box .btn { justify-content: center; }
+
+    .timeline li { grid-template-columns: 1fr; gap: 4px; }
+    .timeline .when { padding-top: 0; margin-bottom: 2px; }
+
+    .skills { grid-template-columns: 1fr; gap: 6px 0; }
+    .skills dt { padding-top: 12px; }
+    .skills dt:first-child { padding-top: 0; }
+
+    .contact .channel { display: block; width: auto; margin-bottom: 2px; }
+  }
+
+  /* Subtle entrance animation */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  header, .bio, .paper-feature, .cv-box, section, footer {
+    animation: rise 0.7s ease-out backwards;
+  }
+  header                 { animation-delay: 0.05s; }
+  .bio                   { animation-delay: 0.15s; }
+  .paper-feature         { animation-delay: 0.22s; }
+  .cv-box                { animation-delay: 0.30s; }
+  section:nth-of-type(1) { animation-delay: 0.36s; }
+  section:nth-of-type(2) { animation-delay: 0.42s; }
+  section:nth-of-type(3) { animation-delay: 0.48s; }
+  section:nth-of-type(4) { animation-delay: 0.54s; }
+  footer                 { animation-delay: 0.60s; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============== HEADER ============== -->
+  <header>
+    <div class="header-grid">
+      <div class="header-text">
+        <div class="eyebrow">Personal Page</div>
+        <h1>Matheus Junqueira</h1>
+        <div class="role">Predoctoral Fellow</div>
+        <div class="affiliation">Global Research Training Initiative — Johns Hopkins SAIS</div>
+      </div>
+      <div class="photo-frame">
+        <img src="photo.jpg" alt="Portrait of Matheus Junqueira" />
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== BIO ============== -->
+  <div class="bio">
+    <p>
+      I am a <em>Predoctoral Fellow</em> at the Global Research Training Initiative
+      (GRTI-UPPER) at Johns Hopkins SAIS, working with Professors Filipe Campante
+      and Shoumitro Chatterjee. My research sits at the intersection of
+      <em>political economy</em>, <em>international trade</em>, and applied
+      econometrics, with a focus on how political institutions shape economic
+      outcomes.
+    </p>
+    <p>
+      I hold an M.A. in Economics from FGV-EESP (2025) and a B.A. in Economics
+      from FEA-USP (2021). My master's thesis used a regression discontinuity
+      design across 1,064 national elections (1945–2018) to identify the causal
+      effect of left-wing electoral victories on trade policy.
+    </p>
+  </div>
+
+  <!-- ============== FEATURED PAPER ============== -->
+  <section class="paper-feature">
+    <div class="paper-tag">Working Paper · September 2025</div>
+    <h3 class="paper-title">From Ballots to Borders</h3>
+    <div class="paper-subtitle">The Influence of Political Regimes on Global Trade Policies</div>
+    <p class="paper-abstract">
+      Are left-wing governments protectionist? Using a regression discontinuity
+      design across 1,064 national elections (1945–2018), this paper shows that
+      left-wing administrations adopt significantly more protectionist measures —
+      raising import tariffs and reducing import volumes while promoting exports.
+      Effects vary meaningfully across presidential, parliamentary, and
+      semi-presidential systems.
+    </p>
+    <a class="btn" href="paper.pdf" target="_blank" rel="noopener">
+      Read the paper
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 17L17 7M17 7H8M17 7V16"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ============== CV BOX ============== -->
+  <div class="cv-box">
+    <div class="label">
+      Curriculum Vitae
+      <small>Updated 2026 · PDF</small>
+    </div>
+    <a class="btn" href="cv.pdf" download>
+      Download
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ============== RESEARCH INTERESTS ============== -->
+  <section>
+    <h2>Research Interests</h2>
+    <ul class="interests">
+      <li>Macroeconomics</li>
+      <li>International Trade</li>
+      <li>Political Economy</li>
+      <li>Development</li>
+    </ul>
+  </section>
+
+  <!-- ============== EDUCATION & AFFILIATIONS ============== -->
+  <section>
+    <h2>Education &amp; Affiliations</h2>
+    <ul class="timeline">
+      <li>
+        <span class="when">2025 —</span>
+        <span class="what">
+          <strong>Predoctoral Fellow</strong>
+          <span class="where">Johns Hopkins SAIS · GRTI-UPPER</span>
+          <span class="detail">Supervisors: Filipe Campante and Shoumitro Chatterjee</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2023 – 2025</span>
+        <span class="what">
+          <strong>M.A. in Economics</strong>
+          <span class="where">FGV-EESP, São Paulo</span>
+          <span class="detail">Thesis: "From Ballots to Borders" — advisors: Marcos Y. Nakaguma and Pierluca Pannella</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2016 – 2021</span>
+        <span class="what">
+          <strong>B.A. in Economics</strong>
+          <span class="where">FEA-USP, São Paulo</span>
+          <span class="detail">Thesis: Political budget cycles in Brazil (2003–2015), VAR identification</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2020</span>
+        <span class="what">
+          <strong>Exchange Programme</strong>
+          <span class="where">Dongguk University, Seoul</span>
+          <span class="detail">USP Academic Merit Scholarship (1 of 3 recipients)</span>
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============== HONORS ============== -->
+  <section>
+    <h2>Honors &amp; Fellowships</h2>
+    <ul class="honors">
+      <li>UPPER-GRTI Predoctoral Fellowship, Johns Hopkins SAIS <span class="year">(2025)</span></li>
+      <li>Selected for the FGV-USP Symposium on Political Science <span class="year">(2025)</span></li>
+      <li>CAPES &amp; FGV-EESP Fellowships <span class="year">(2023–2024)</span></li>
+      <li>USP International Exchange Merit Scholarship <span class="year">(2020)</span></li>
+    </ul>
+  </section>
+
+  <!-- ============== SKILLS ============== -->
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Programming</dt>
+      <dd>R, Stata, Python, LaTeX, SAS, MATLAB</dd>
+      <dt>Languages</dt>
+      <dd>Portuguese <em>(native)</em>, English <em>(fluent)</em>, French <em>(beginner)</em></dd>
+    </dl>
+  </section>
+
+  <!-- ============== CONTACT ============== -->
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <div><span class="channel">Email</span> <a href="mailto:assumpcao.junqueira@gmail.com">assumpcao.junqueira@gmail.com</a></div>
+      <div><span class="channel">LinkedIn</span> <a href="https://www.linkedin.com/in/matheus-junqueira-b98965298" target="_blank" rel="noopener">linkedin.com/in/matheus-junqueira</a></div>
+      <div><span class="channel">Location</span> <span>São Paulo · Baltimore</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Matheus Junqueira</span>
+    <span><span class="glyph">§</span> Built with care</span>
+  </footer>
+
+</div>
+</body>
+</html>
